@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 export default function HomePage() {
   const featured = projects.filter((p) => p.featured)
-
+  const featuredTestimonial = testimonials[0]
   return (
     <>
       <Hero />
@@ -100,7 +100,7 @@ export default function HomePage() {
             <div className="lg:col-span-5">
               <p className="text-[11px] tracking-luxury uppercase text-background/50 mb-8">Testimonials</p>
               <div className="relative aspect-[4/5] overflow-hidden bg-charcoal-light">
-                <Image src={testimonials[0].avatar} alt={testimonials[0].name} fill className="object-cover" />
+                <Image src={featuredTestimonial!.avatar} alt={featuredTestimonial!.name} fill className="object-cover" />
               </div>
             </div>
             <div className="lg:col-span-7 lg:pl-12">
@@ -109,8 +109,8 @@ export default function HomePage() {
               </blockquote>
               <div className="mt-10 flex items-center gap-4">
                 <div>
-                  <p className="font-medium">{testimonials[0].name}</p>
-                  <p className="text-sm text-background/60">{testimonials[0].role}, {testimonials[0].company}</p>
+                  <p className="font-medium">{featuredTestimonial!.name}</p>
+                  <p className="text-sm text-background/60">{featuredTestimonial!.role}, {featuredTestimonial!.company}</p>
                 </div>
               </div>
               <Link href="/testimonials" className="mt-16 inline-flex h-12 px-8 items-center border border-background/20 text-[11px] tracking-luxury uppercase hover:bg-background hover:text-charcoal transition-colors">

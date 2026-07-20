@@ -1,11 +1,12 @@
 "use client"
 import Link from 'next/link'
+import type { Route } from 'next'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-const links = [
+const links: { href: Route; label: string }[] = [
   { href: '/work', label: 'Work' },
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
