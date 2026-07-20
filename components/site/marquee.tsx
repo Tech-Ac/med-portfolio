@@ -10,7 +10,7 @@ export function Marquee({ text = 'SIMO — Marrakech — Brand Identity — Pack
         className="flex whitespace-nowrap"
       >
         {Array.from({ length: 6 }).map((_, i) => (
-          <span key={i} className="mx-8 font-display text-3xl tracking-tight text-foreground/10">
+          <span key={i} className="mx-8 font-display text-3xl tracking-tight text-foreground/70">
             {text}
           </span>
         ))}
