@@ -7,7 +7,7 @@ create extension if not exists "pgcrypto";
 
 -- Profiles table (extends auth.users)
 create table public.profiles (
-  id uuid primary references auth.users on delete cascade not null,
+id uuid primary key references auth.users(id) on delete cascade not null,
   email text not null,
   full_name text,
   avatar_url text,
