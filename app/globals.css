@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #FAF7F2;
+  --color-foreground: #151412;
+  --color-muted: #E8E0D5;
+  --color-muted-foreground: #7A7268;
+  --color-terracotta: #C17B5F;
+  --color-terracotta-dark: #A6664B;
+  --color-limestone: #EDE6DC;
+  --color-limestone-dark: #D9D0C2;
+  --color-sand: #D6C1A0;
+  --color-charcoal: #171614;
+  --color-charcoal-light: #2A2826;
+  --color-border: #E8DFD3;
+  --color-input: #E8DFD3;
+  --color-ring: #C17B5F;
+  --color-primary: #151412;
+  --color-primary-foreground: #FAF7F2;
+  --color-secondary: #EDE6DC;
+  --color-secondary-foreground: #151412;
+  --color-accent: #C17B5F;
+  --color-accent-foreground: #FAF7F2;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+  --font-display: var(--font-cormorant);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+  }
+  ::selection {
+    background: var(--color-terracotta);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  .font-display {
+    font-family: var(--font-cormorant), serif;
+    letter-spacing: -0.02em;
+  }
+  .tracking-luxury { letter-spacing: 0.18em; }
+  .leading-luxury { line-height: 0.9; }
+  .border-luxury { border-color: var(--color-border); }
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-background); }
+::-webkit-scrollbar-thumb { background: var(--color-limestone-dark); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-terracotta); }
+:focus-visible { outline: 2px solid var(--color-terracotta); outline-offset: 2px; }
